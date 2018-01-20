@@ -70,23 +70,14 @@ function isPrimeNumber(number) {
 }
 
 
+
 //一個月30天
 //休5的倍數的日期
 
 function offday() {
-    var result = [];
     for (var i = 1; i <= 30; i = i + 1) {
         if (i % 5 === 0) {
-            result.push(i);
+            console.log('今天' + i + '號休假')
         }
     }
-    return result;
 }
-
-function offdayZoe() {
-    for (var i = 1; i <= 30; i = i + 1) {
-        if (i % 5 === 0)
-            console.log(i)
-    }
-}
-

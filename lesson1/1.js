@@ -14,18 +14,14 @@
 
 //html,css,javascript
 
-//ES5,ES6
-
-
-
 // 變數宣告
 // 區域變數: 只在該function內有效的變數
 // 全域變數: 在整個程式都有效的變數
-var i1 = 1; //integer
+var i1 = 2; //integer
 var i5 = 1.112435432; //float
-var i2 = '2'; // string
+var i2 = '2sdfsfdsg'; // string
 var i3 = "3"; // char
-var i4 = [1,'2',3,4,5,6]; // array
+var i4 = [1,'2',3.3,4,5,6, [1,2,3] ]; // array
 var i6 = true; //boolean
 var i7 = false;
 
@@ -38,27 +34,35 @@ var profile = {
     DesirePay: 22000,
     Nationality: 'Taiwanese',
     IsMarried: false,
-    IsSingle: true
+    IsSingle: true,
+    Dogs: ["ted", "tony" ],
+    Pets: {
+        Dogs: ["ted", "tony" ],
+        Available: 5
+    }
+
 };
-document.write(JSON.stringify(profile));
-
-var a = '{"Name":"Xuecheng"}';
-var b = JSON.parse(a);
-// document.write(b.Name);
+// console.log(profile.Pets);
+// document.write(profile.Age);
 
 
-
-
-//只有台灣人能投票
+//能不能投票
 function canVote(profile) {
-    if (profile.nationality === 'Taiwanese') {
+    if (profile.Nationality === 'Taiwanese') {
         return true
-    } else if(profile.nationality === 'American'){
+    } else if(profile.Nationality === 'American'){
         return false;
     }else{
-        return '再看看';
+        return "再看看";
     }
 }
+
+//
+// if(canVote(profile)){
+//     alert('可以投票')
+// }else{
+//     alert('不能投票')
+// }
 
 //薪水計算機
 function yourPay(profile) {
@@ -68,15 +72,15 @@ function yourPay(profile) {
     if (profile.Age > 30) {
         boost += 1000;
     }
-    if (profile.Height > 180){
+    if (profile.Height >= 180){
         boost -= 1000;
     }
 
     return base + boost;
 }
 
-document.write(yourPay(profile));
-
-
-
-
+// document.write(yourPay(profile));
+//
+//
+//
+//
